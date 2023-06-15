@@ -1,13 +1,11 @@
 <script>
-  import { Link, Route, Router } from 'svelte-routing'
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+  import { Route, Router } from 'svelte-routing'
 
   import Home from './routes/Home.svelte';
   import Servers from './routes/Servers.svelte';
   import Dashboard from './routes/Dashboard.svelte';
-    import NavBar from './components/navbar/NavBar.svelte';
+  import NavBar from './components/navbar/NavBar.svelte';
+  import Server from './routes/Server.svelte';
 
 </script>
 
@@ -17,6 +15,9 @@
     <Route path='/' component={Home} />
     <Route path='/dashboard' component={Dashboard} />
     <Route path='/servers' component={Servers} />
+    <Route path='/servers/:id' let:params component={Server}>
+      <Server id={params.id}/>
+    </Route>
   </Router>
 </main>
 

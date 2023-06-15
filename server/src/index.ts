@@ -3,10 +3,14 @@
 // dotenv.config()
 // const {} = process.env
 // console.log(process)
-import app from "./app";
-
+import httpServer from "./app";
+// console.log('algo')
 const PORT = 3001;
 
-app.listen(PORT, ()=>{
+httpServer.listen(PORT, ()=>{
     console.log(`Server is listening at Port ${PORT}`)
 });
+
+// app.httpServer.listen(app.app.get('port'), () => {
+//     console.log('Express server listening on port ' + app.app.get('port'))
+//   })
