@@ -9,7 +9,6 @@
 
     onMount(async ()=>{
       
-      console.log('segundo')
       ele.animate([
         { width: '0' },
         { width: media },

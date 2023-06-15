@@ -1,7 +1,9 @@
 <script>
-    import ServerInfo from "./ServerInfo.svelte";
-import ServerTable from "./ServerTable.svelte";
+    import { Link } from "svelte-routing";
+import ServerInfo from "./ServerInfo.svelte";
+    import ServerTable from "./ServerTable.svelte";
 
+    export let number;
     let server = {
         name:'Sala 1',
         players:[],// Cantidad y de que juegan
@@ -17,13 +19,17 @@ import ServerTable from "./ServerTable.svelte";
         chat:[],
         viewers:[]
     }
+
+    const handlerRedirect = ()=>{
+        
+    }
 </script>
     <ServerTable/>
-        <h3>{server.name}</h3>
+        <h3>sala {number}</h3>
         
         <ServerInfo {server}/>
         <div class="botonera">
-            <button>ent</button>
+            <button on:click={()=>{}}><Link to={`servers/${number}`}>ent</Link></button>
             <button>exp</button>
         </div>
 <style>

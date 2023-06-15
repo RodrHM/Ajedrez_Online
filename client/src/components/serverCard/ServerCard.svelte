@@ -1,9 +1,9 @@
 <script>
     // import ServerLoader from "./ServerLoader.svelte";
     import ServerInfo from './ServerData.svelte';
-import ServerLoader from './ServerLoader.svelte';
+    import ServerLoader from './ServerLoader.svelte';
 
-
+    export let number;
     let data;
     let server = {
         name:'Sala 1',
@@ -25,16 +25,12 @@ import ServerLoader from './ServerLoader.svelte';
 <div class="card">
     {#if server}
          <!-- content here -->
-        <ServerInfo/>
+        <ServerInfo {number}/>
     {:else}
          <!-- else content here -->
         <ServerLoader/>
     {/if}
 </div>
-
-
-
-
 
 <style>
     .card {
@@ -42,6 +38,7 @@ import ServerLoader from './ServerLoader.svelte';
         /* min-height: 17rem; */
         width: 350px;
         height: 200px;
+        transform: scale(.9);
         background-color: #212121;
         border-radius: 1rem;
         border: #212121 0.2rem solid;
@@ -59,40 +56,6 @@ import ServerLoader from './ServerLoader.svelte';
         grid-template-rows: repeat(3, 1fr);
 
         align-items: center;
-    }
-    span{
-        margin: 0;
-    }
-    .table{
-        width: 100%;
-        aspect-ratio: 1/1;
-        background-color: aqua;
-        
-        grid-row: 1/4;
-        grid-column: 1/4;
-    }
-    h3{
-        width: 100%;
-        margin: 0;
-        grid-row: 1/2;
-        grid-column: 4/7;
-    }
-    .botonera{
-        background-color: blue;
-        grid-template-rows: 2/3;
-        grid-column: 4/7;
-    }
-    .info-party{
-        background-color: crimson;
-
-        grid-template-rows: 3/4;
-        grid-column: 4/7;
-
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        
-        place-items: center;
     }
 
     .card:hover {
