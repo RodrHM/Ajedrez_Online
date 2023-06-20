@@ -1,9 +1,11 @@
 <script>
     import { fade } from 'svelte/transition';
+
+    export let name;
 </script>
 <div in:fade="{{duration:2000}}">
     
-    <h3 class="name">Albert Feynman</h3>
+    <h3 class="name">{name}</h3>
     <div class="buttons">
         <button class="btn">Retar</button>
         <!-- <button class="btn">friend</button> -->

@@ -1,20 +1,27 @@
 <script>
-    export let player = 'white';
-    export let message_list;
+    import { chatStore } from "../../../stores/serverChat";
+    import { socketServerStore } from "../../../stores/socket";
+    import { turnStore } from "../../../stores/stores";
+
+    // export let player = 'white';
+    // export let message_list;
 
     let message = '';
     //  SUPONGO YO QUE ESTOS MENSAGES VENDRAN DESDE LA BASE DE DATOS JUNTO CON EL DATO PLAYER
 
     const sendMessage = ()=>{
-        message_list = [...message_list, {message, player}]
+        if(!message.length) return
 
+        const user = {name: $turnStore, color:''}
+        // chatStore.sendMessage({message, user})
+        socketServerStore.chatMessage({message, user})
         message=''
     }
 
 </script>
 <div class="chat-input">
     <input bind:value={message} on:keydown={(e)=>e.key==='Enter'&&sendMessage()}
-    type="text" class="message-input" placeholder="#help for commands">
+    type="text" class="message-input" placeholder="send message">
     <button class="send-button" on:click={sendMessage}>Send</button>
 </div>
 <style>

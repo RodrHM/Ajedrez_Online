@@ -2,26 +2,13 @@
     import ChatInput from "./ChatInput.svelte";
     import ChatWindow from "./ChatWindow.svelte";
 
-    export let player = 'white';
-
-    let message = '';
-    //  SUPONGO YO QUE ESTOS MENSAGES VENDRAN DESDE LA BASE DE DATOS JUNTO CON EL DATO PLAYER
-    let message_list = [{message:'Primer mensaje', player:'black'}]
 </script>
 
 <div id="chatBox">
     <div class="card">
         <div class="chat-header">Chat</div>
-        <ChatWindow {message_list}/>
-        <!-- <div class="chat-window"> -->
-            <!-- <ul class="message-list"> -->
-                <!-- LISTA DE MENSAJES -->
-                <!-- {#each message_list as {message, player},idx (idx)} -->
-                    <!-- <li class={`message ${player}`}>{message}</li> -->
-                <!-- {/each} -->
-            <!-- </ul> -->
-        <!-- </div> -->
-        <ChatInput {player} bind:message_list on:toFromComand/>
+        <ChatWindow />
+        <ChatInput />
         <!-- <div class="chat-input"> -->
             <!-- <input bind:value={message} -->
             <!-- type="text" class="message-input" placeholder="#help for commands"> -->

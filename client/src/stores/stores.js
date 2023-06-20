@@ -15,11 +15,15 @@ const createTable = ()=>{
 
     return {
         subscribe,
+        tableSet:(table)=>{
+            console.log(table)
+            set(table)
+        },
         //  recive un objeto con 2 coordenaas xy y realiza el movimiento de la pieza
         move:({from, to})=>{
 
             update( tb => {
-                tb[from.eje_y][from.eje_x][0].children[0].innerHTML=to.piece
+                tb[from.eje_y][from.eje_x][0].children[0].innerHTML=''
                 tb[to.eje_y][to.eje_x][0].children[0].innerHTML=from.piece
                 return tb
             })
@@ -89,6 +93,18 @@ const createTable = ()=>{
             })
         },
         endGame:()=>{},
+        reset:()=>{
+            set([
+                [[],[],[],[],[],[],[],[]],
+                [[],[],[],[],[],[],[],[]],
+                [[],[],[],[],[],[],[],[]],
+                [[],[],[],[],[],[],[],[]],
+                [[],[],[],[],[],[],[],[]],
+                [[],[],[],[],[],[],[],[]],
+                [[],[],[],[],[],[],[],[]],
+                [[],[],[],[],[],[],[],[]]
+            ])
+        }
     }
 }
 
@@ -107,6 +123,9 @@ const createTurn = ()=>{
                 return 
             })
         },
+        reset:()=>{
+            set('')
+        }
     }
 }
 

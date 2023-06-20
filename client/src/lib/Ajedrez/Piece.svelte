@@ -1,32 +1,19 @@
 <script>
-    export let buttonPiece = {};
-    export let range;
+    export let piece;
     // export let position;
-
-    const handlerTo = ()=>{
-        console.log('Evaluamos sus posibles movimientos en base a su rango')
-    }
 </script>
 
-<button bind:this={buttonPiece} on:click={handlerTo}><p>{@html range}</p></button>
+<li>{piece}</li>
 
 <style>
-    button{
-        margin:0;
-        padding:0;
-        width: 3em;
-        height: 3em;
-        border: none;
-    }
-    button:focus{
-        outline: none;
-    }
-    p{
-        margin:0;
-        padding:0;
-        color: red;
-        /* width: 3em; */
-        /* height: 3em; */
+    li{
+        list-style: none;
+        text-align: center;
         font-size: 2em;
+
+        color: black;
+    }
+    li:focus{
+        outline: none;
     }
 </style>

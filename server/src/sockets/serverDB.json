@@ -1,0 +1,14 @@
+{
+    "id_server":"",
+    "name":"Sala 1",
+    "players":[],
+    "table":[],
+    "state":"emtry",
+    "private":["email", "..."],
+    "history":[],
+    "turn":"",
+    "whiteDead":[],
+    "blackDead":[],
+    "chat":[],
+    "viewers":[]
+}

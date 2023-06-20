@@ -3,12 +3,11 @@
     import Locker from "./Locker.svelte";
     import {tableStore} from '../../stores/stores'
 
-    export let lockers;
     // export let pleyer;
     let table = $tableStore
 
 </script>
-<div id="table" bind:this={lockers}>
+<div id="table" >
     {#each table as row, row_idx}
     {#each row as col, col_idx (`${row_idx}${col_idx}`)}
         <Locker 

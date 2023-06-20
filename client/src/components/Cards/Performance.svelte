@@ -1,13 +1,14 @@
 <script>
     import Output from "./Output.svelte";
 
-
+    export let performance;
 </script>
 
 <div class="ds-info">
-    <Output name='Partidas' order=2 state='29'/>
-    <Output name='Victorias' order=1 state='0'/>
-    <Output name='Derrotas' order=0 state='0'/>
+    <Output name='Partidas' order=3 state={performance.games}/>
+    <Output name='Victorias' order=2 state={performance.victories}/>
+    <Output name='Derrotas' order=1 state={performance.defeats}/>
+    <Output name='Tablas' order=0 state={performance.draw}/>
 </div>
 
 <style>

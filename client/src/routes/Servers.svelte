@@ -6,12 +6,12 @@
 <div id="server">
     <h1>Servers</h1>
     <div class="servers">
-        <ServerCard number=1/>
-        <ServerCard number=2/>
-        <ServerCard number=3/>
-        <ServerCard number=4/>
-        <ServerCard number=5/>
-        <ServerCard number=6/>
+        <ServerCard id_server=1/>
+        <ServerCard id_server=2/>
+        <ServerCard id_server=3/>
+        <ServerCard id_server=4/>
+        <ServerCard id_server=5/>
+        <ServerCard id_server=6/>
     </div>
 </div>
 

@@ -3,8 +3,9 @@
 import ServerInfo from "./ServerInfo.svelte";
     import ServerTable from "./ServerTable.svelte";
 
-    export let number;
+    export let id_server;
     let server = {
+        id_server:1,
         name:'Sala 1',
         players:[],// Cantidad y de que juegan
         table:[],
@@ -25,16 +26,14 @@ import ServerInfo from "./ServerInfo.svelte";
     }
 </script>
     <ServerTable/>
-        <h3>sala {number}</h3>
+        <h3>sala {id_server}</h3>
         
         <ServerInfo {server}/>
         <div class="botonera">
-            <button on:click={()=>{}}><Link to={`servers/${number}`}>ent</Link></button>
+            <button on:click={()=>{}}><Link to={`servers/${id_server}`}>ent</Link></button>
             <button>exp</button>
         </div>
 <style>
-    
-    
     h3{
         width: 100%;
         margin: 0;
@@ -46,5 +45,4 @@ import ServerInfo from "./ServerInfo.svelte";
         grid-template-rows: 2/3;
         grid-column: 4/7;
     }
-    
 </style>

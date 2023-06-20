@@ -10,14 +10,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rhm",
   "license": "ISC",
   "dependencies": {
     "@types/morgan": "^1.9.4",
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
     "express": "4.18.2",
-    "socket.io": "^4.6.2"
+    "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.32.1",
+    "socket.io": "^4.6.2",
+    "ts-dotenv": "^0.9.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

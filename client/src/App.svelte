@@ -15,7 +15,7 @@
     <Route path='/' component={Home} />
     <Route path='/dashboard' component={Dashboard} />
     <Route path='/servers' component={Servers} />
-    <Route path='/servers/:id' let:params component={Server}>
+    <Route path='/servers/:id' let:params >
       <Server id={params.id}/>
     </Route>
   </Router>

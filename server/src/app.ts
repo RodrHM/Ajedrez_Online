@@ -40,7 +40,11 @@ app.use('/api', router)
 //         console.log('Un cliente se ha desconectado')
 //     })
 // })
-serverSocket(io.of('/api/server/1'))
-serverSocket(io.of('/api/server/2'))
+serverSocket(io.of('/api/server/1'), "1")
+serverSocket(io.of('/api/server/2'), "2")
+serverSocket(io.of('/api/server/3'), "3")
+serverSocket(io.of('/api/server/4'), "4")
+serverSocket(io.of('/api/server/5'), "5")
+serverSocket(io.of('/api/server/6'), "6")
 
 export default httpServer

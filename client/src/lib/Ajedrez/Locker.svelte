@@ -1,7 +1,5 @@
 <script>
     import { handlerFromTo } from "./piece-Move";
-    import {tableStore} from "../../stores/stores";
-    import { onMount } from "svelte";
 
     export let locker;
     // export let range;
@@ -18,6 +16,7 @@
             piece:locker.children[0].innerHTML}
         // const detail = {eje_x, eje_y}
         handlerFromTo(detail)
+        
     }
 
     // const handlerFromT = ()=>{
