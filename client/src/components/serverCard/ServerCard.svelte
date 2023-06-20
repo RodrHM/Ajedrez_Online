@@ -3,10 +3,12 @@
     import ServerInfo from './ServerData.svelte';
     import ServerLoader from './ServerLoader.svelte';
 
-    export let number;
-    let data;
+    export let id_server;
     let server = {
+        id_server,
+        _id_user:'',
         name:'Sala 1',
+        email:'',
         players:[],// Cantidad y de que juegan
         table:[],
         state:'emtry',// [emtry, standby, full, progress]
@@ -25,7 +27,7 @@
 <div class="card">
     {#if server}
          <!-- content here -->
-        <ServerInfo {number}/>
+        <ServerInfo {id_server}/>
     {:else}
          <!-- else content here -->
         <ServerLoader/>

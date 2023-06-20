@@ -1,10 +1,12 @@
 <script>
+    import { socketServerStore } from "../../stores/socket";
     import { tableStore } from "../../stores/stores";
 
     const startGame = ()=>{
         console.log('INICIAR JUEGO')
         // dispatch('startGame')
-        tableStore.startGame()
+        // tableStore.startGame()
+        socketServerStore.startGame()
     }
 </script>
 

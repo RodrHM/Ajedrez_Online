@@ -1,15 +1,15 @@
 <script>
-    import Graph from "./Graph.svelte";
-    import { fade } from "svelte/transition";
+  import Graph from "./Graph.svelte";
+  import { fade } from "svelte/transition";
 
-
+  export let statistics
 </script>
 
 <div class="ds-skill">
     <h6 in:fade="{{duration:2000}}">Skill</h6>
-    <Graph name='Promedio de victorias' media=50%/>
-    <Graph name='Como Blancas' media=90%/>
-    <Graph name='Como negras' media=75%/>
+    <Graph name='Promedio de victorias' media={statistics.gamesAverage}/>
+    <Graph name='Como Blancas' media={statistics.victoriesAverage}/>
+    <Graph name='Como negras' media={statistics.defeatsAverage}/>
 </div>
 
 <style>

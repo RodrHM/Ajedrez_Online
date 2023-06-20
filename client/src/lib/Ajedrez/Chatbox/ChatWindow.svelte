@@ -1,13 +1,16 @@
 <script>
+    import { chatStore } from "../../../stores/serverChat";
+
     //  SUPONGO YO QUE ESTOS MENSAGES VENDRAN DESDE LA BASE DE DATOS JUNTO CON EL DATO PLAYER
-    export let message_list = [{message:'Primer mensaje', player:'black'}]
+    let message_list = []
     
+    $:message_list = $chatStore
 </script>
 <div class="chat-window">
     <ul class="message-list">
         <!-- LISTA DE MENSAJES -->
-        {#each message_list as {message, player},idx (idx)}
-            <li class={`message ${player}`}>{message}</li>
+        {#each message_list as {message, user},idx (idx)}
+            <li class={`message ${user.color}`}>{message}</li>
         {/each}
     </ul>
 </div>
