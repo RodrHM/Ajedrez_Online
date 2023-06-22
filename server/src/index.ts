@@ -4,13 +4,13 @@
 // const {} = process.env
 // console.log(process)
 import httpServer from "./app";
-// console.log('algo')
-const PORT = 3001;
+import {conn} from './db'
+import env from './env'
 
-httpServer.listen(PORT, ()=>{
-    console.log(`Server is listening at Port ${PORT}`)
-});
+const PORT = env.PORT || 3001;
 
-// app.httpServer.listen(app.app.get('port'), () => {
-//     console.log('Express server listening on port ' + app.app.get('port'))
-//   })
+conn.sync({force: true}).then(()=>{
+    httpServer.listen(PORT, ()=>{
+        console.log(`Server is listening at Port ${PORT}`)
+    });
+})

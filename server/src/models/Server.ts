@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize";
 
-const ServerModel = (sequelize:Sequelize)=>{
+const serverModel = (sequelize:Sequelize)=>{
     sequelize.define('Server', {
         id:{
             type:DataTypes.UUID,
@@ -17,7 +17,7 @@ const ServerModel = (sequelize:Sequelize)=>{
             defaultValue:[]
         },
         table:{
-            type:DataTypes.ARRAY(DataTypes.ARRAY(DataTypes.ARRAY)),
+            type:DataTypes.ARRAY(DataTypes.ARRAY(DataTypes.STRING)),
             defaultValue:[
                 ['','','','','','','',''],
                 ['','','','','','','',''],
@@ -68,7 +68,7 @@ const ServerModel = (sequelize:Sequelize)=>{
     })
 }
 
-export default ServerModel;
+export default serverModel;
 
 // export type ServerDB = {
 //     "id_server":String,
