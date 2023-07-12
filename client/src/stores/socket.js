@@ -11,18 +11,21 @@ const createSocketServer = ()=>{
             set(socket)
         },
         chatMessage:({message, user})=>{
-            subscribe((socket)=>{
+            update((socket)=>{
                 socket.emit('chat message', {message, user})
+                return socket
             })
         },
         startGame:()=>{
-            subscribe((socket)=>{
+            update((socket)=>{
                 socket.emit('start game')
+                return socket
             })
         },
         movePiece:(table)=>{
-            subscribe((socket)=>{
+            update((socket)=>{
                 socket.emit('move piece', table)
+                return socket
             })
         },
         reset:()=>{

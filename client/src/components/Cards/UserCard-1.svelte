@@ -24,11 +24,12 @@
     }
 
     let user = $userStore
+    console.log({user})
 </script>
 
 <div class="card">
     <Avatar/>
-    <InfoUser name={user.name}/>
+    <InfoUser name={user.username}/>
     <Performance performance={user.performance}/>
     <Statistics statistics={user.statistics}/>
   </div>

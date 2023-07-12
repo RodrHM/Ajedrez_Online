@@ -57,7 +57,7 @@ const serverSocket = (io:any, id_server:string)=>{
       "blackDead":[],
       "chat":[],
       "viewers":[]
-  }
+    }
     io.on('connection', (socket:any)=>{
         // console.log(io.name)
         serverDB.players.push(dataBaseUser[count])

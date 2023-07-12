@@ -6,19 +6,31 @@
   import Dashboard from './routes/Dashboard.svelte';
   import NavBar from './components/navbar/NavBar.svelte';
   import Server from './routes/Server.svelte';
+  import Auth from './routes/Auth.svelte';
+  import axios from 'axios'
+  import AuthProvider from './routes/AuthProvider.svelte';
+  import PrivateRoute from './components/PrivateRoute/PrivateRoute.svelte';
+    import PublicRoute from './components/PublicRoute/PublicRoute.svelte';
+
+  axios.defaults.baseURL = 'http://localhost:3001/api'
 
 </script>
 
 <main>
-  <Router>
-    <NavBar/>
-    <Route path='/' component={Home} />
-    <Route path='/dashboard' component={Dashboard} />
-    <Route path='/servers' component={Servers} />
-    <Route path='/servers/:id' let:params >
-      <Server id={params.id}/>
-    </Route>
-  </Router>
+  <AuthProvider>
+    <Router>
+      <NavBar/>
+      <Route path='/' component={Home} />
+      <PublicRoute path='/auth' component={Auth}/>
+      <!-- <Route path='/auth' component={Auth} /> -->
+      
+      <PrivateRoute path='/dashboard' component={Dashboard} />
+      <PrivateRoute path='/servers' component={Servers} />
+      <PrivateRoute path='/servers/:id' let:params>
+        <Server id={params.id}/>
+      </PrivateRoute>
+    </Router>
+  </AuthProvider>
 </main>
 
 <style>
