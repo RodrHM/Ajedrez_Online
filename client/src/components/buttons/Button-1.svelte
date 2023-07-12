@@ -1,8 +1,15 @@
 <script>
-    export let name='';
+    import { createEventDispatcher } from "svelte";
+
+    export let name;
+
+    const dispatch = createEventDispatcher()
+    const handleButton = ()=>{
+        dispatch('handleButton', {name})
+    }
 </script>
 
-<button>
+<button on:click={handleButton}>
     {name}
     <div class="arrow-wrapper">
         <div class="arrow"></div>

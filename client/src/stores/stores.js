@@ -39,13 +39,16 @@ const createTable = ()=>{
         movements:(from)=>{
             const {eje_x, eje_y, piece} = from
             let possibleMovements = []
-            subscribe((table)=>{
+            update((table)=>{
+                possibleMovements = movements({table, from, piece})
+                return table
+            })
+            // subscribe((table)=>{
                 // const [col, row] = position.split('')
                 // const eje_x = {a:0,b:1,c:2,d:3,e:4,f:5,g:6,h:7}[col]
                 // const eje_y = row*1
                 // handlerFromTo({table, eje_x, eje_y})
-                possibleMovements = movements({table, from, piece})
-            })
+            // })
             return possibleMovements
         },
         startGame:()=>{

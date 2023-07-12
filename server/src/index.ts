@@ -1,8 +1,3 @@
-// import dotenv from 'dotenv'
-// require('dotenv').config()
-// dotenv.config()
-// const {} = process.env
-// console.log(process)
 import httpServer from "./app";
 import {conn} from './db'
 import env from './env'

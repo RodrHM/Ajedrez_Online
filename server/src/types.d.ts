@@ -35,7 +35,7 @@ type Performance = {
     victories:Number,
     defeats:Number,
     draw:Number,
-  }
+}
 type Statistics = {
     gamesAverage:String,
     victoriesAverage:String,

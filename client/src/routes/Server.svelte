@@ -11,6 +11,7 @@
     export let id;
     let socket;
 
+
     onMount( async ()=>{
         // CONDICIONAL PARA QUE NO ENTRE EN CASO DE QUE EL ID NO SEA ENTRE 1 Y 6
         // const id_server = window.location.pathname.split('/').at(-1)
